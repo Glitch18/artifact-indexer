@@ -1,0 +1,16 @@
+.venv/
+.uv-cache/
+.python/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.env
+.env.*
+!.env.example
+.DS_Store
+*.tar
+evidence/local/*
+!evidence/local/.gitkeep
+evidence/github/*
+!evidence/github/.gitkeep

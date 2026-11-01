@@ -1,0 +1,35 @@
+{
+  "fixture_notice": "Synthetic local data only. No real student records; URLs must never be fetched.",
+  "people": [
+    {"id": "10000000-0000-4000-8000-000000000001", "display_name": "Alex Example"},
+    {"id": "10000000-0000-4000-8000-000000000002", "display_name": "Sam Sample"}
+  ],
+  "programs": [
+    {"id": "30000000-0000-4000-8000-000000000001", "name": "Example Computer Science"}
+  ],
+  "labs": [
+    {"id": "40000000-0000-4000-8000-000000000001", "name": "Example Systems Lab"}
+  ],
+  "courses": [
+    {"id": "50000000-0000-4000-8000-000000000001", "code": "CS763"},
+    {"id": "50000000-0000-4000-8000-000000000002", "code": "EXAMPLE101"}
+  ],
+  "projects": [
+    {
+      "id": "20000000-0000-4000-8000-000000000001",
+      "title": "Campus energy dashboard",
+      "owner_id": "10000000-0000-4000-8000-000000000001",
+      "program_id": "30000000-0000-4000-8000-000000000001",
+      "lab_id": "40000000-0000-4000-8000-000000000001",
+      "course_ids": ["50000000-0000-4000-8000-000000000001"]
+    },
+    {
+      "id": "20000000-0000-4000-8000-000000000002",
+      "title": "Document catalogue demo",
+      "owner_id": "10000000-0000-4000-8000-000000000002",
+      "program_id": "30000000-0000-4000-8000-000000000001",
+      "lab_id": null,
+      "course_ids": ["50000000-0000-4000-8000-000000000002"]
+    }
+  ]
+}
