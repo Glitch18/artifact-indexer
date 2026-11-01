@@ -1,0 +1,30 @@
+# AI Contribution Weight: 100% AI Generated / 0% Human Refactored
+[project]
+name = "cs763-artifact-indexer"
+version = "0.1.0"
+description = "CS763 Domain 1 - week-one service skeleton"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "fastapi>=0.115,<1",
+    "uvicorn>=0.34,<1",
+    "sqlalchemy>=2.0,<3",
+    "psycopg[binary]>=3.2,<4",
+    "alembic>=1.15,<2",
+]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "httpx>=0.28,<1", "ruff>=0.11,<1"]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
