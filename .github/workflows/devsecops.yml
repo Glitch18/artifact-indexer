@@ -1,0 +1,75 @@
+# AI Contribution Weight: 100% AI Generated / 0% Human Refactored
+name: DevSecOps
+on:
+  push:
+    branches: [main]
+    tags: ['assignment-1-*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.13'
+      - name: Prepare evidence
+        run: |
+          mkdir -p evidence/local
+          git rev-parse HEAD > evidence/local/source-commit.txt
+          date -u +%FT%TZ > evidence/local/run-started.txt
+          python --version > evidence/local/python-version.txt
+          docker version > evidence/local/docker-version.txt
+      - name: Install locked dependencies
+        run: |
+          set -euo pipefail
+          python -m pip install uv==0.13.5
+          uv lock --check
+          uv sync --frozen 2>&1 | tee evidence/local/dependency-install.log
+          uv export --frozen --no-dev --no-emit-project --no-header --output-file /tmp/requirements.txt
+          diff -u requirements.txt /tmp/requirements.txt
+      - name: Lint and test
+        run: |
+          set -euo pipefail
+          uv run --frozen ruff check app tests scripts 2>&1 | tee evidence/local/lint.log
+          uv run --frozen ruff format --check app tests scripts
+          uv run --frozen pytest -q --junitxml=evidence/local/pytest.xml 2>&1 | tee evidence/local/tests.log
+      - name: Build multi-stage container
+        run: |
+          set -euo pipefail
+          docker compose --progress plain build 2>&1 | tee evidence/local/docker-build.log
+          docker image inspect cs763-artifact-indexer:week1 > evidence/local/image-inspect.json
+      - name: Start isolated stack and verify real SQL readiness
+        run: |
+          set -euo pipefail
+          docker compose up -d --wait --wait-timeout 120 2>&1 | tee evidence/local/compose-up.log
+          uv run --frozen python scripts/smoke.py 2>&1 | tee evidence/local/smoke.log
+      - name: SAST (findings non-blocking, execution errors blocking)
+        if: ${{ !cancelled() }}
+        run: bash scripts/scan.sh semgrep evidence/local
+      - name: Dependency and container scan (findings non-blocking)
+        if: ${{ !cancelled() }}
+        run: bash scripts/scan.sh trivy evidence/local
+      - name: Validate security telemetry
+        if: ${{ !cancelled() }}
+        run: python scripts/check_reports.py evidence/local
+      - name: Collect stack logs and stop containers
+        if: always()
+        run: |
+          docker compose logs --no-color > evidence/local/compose.log 2>&1
+          docker compose ps -a > evidence/local/compose-status.txt
+          docker compose down
+      - name: Upload execution evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: devsecops-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: evidence/local/
+          if-no-files-found: error
+          retention-days: 30
