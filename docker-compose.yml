@@ -1,0 +1,37 @@
+# AI Contribution Weight: 100% AI Generated / 0% Human Refactored
+name: cs763-artifact-indexer
+services:
+  api:
+    image: cs763-artifact-indexer:week1
+    build:
+      context: .
+      target: runtime
+    ports:
+      - "127.0.0.1:${API_PORT:-8000}:8000"
+    environment:
+      DATABASE_URL: postgresql+psycopg://indexer:local-course-only@db:5432/artifacts
+    depends_on:
+      db:
+        condition: service_healthy
+    networks: [ingress, backend]
+  db:
+    image: postgres:17-bookworm@sha256:839fbb5a4942a7758dd93e18b42ea5649807491a0545b5eeeb8f0b8bb11857a5
+    environment:
+      POSTGRES_DB: artifacts
+      POSTGRES_USER: indexer
+      # Deliberately public, throwaway, local course credential. Never use in production.
+      POSTGRES_PASSWORD: local-course-only
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U indexer -d artifacts"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+    volumes:
+      - database-data:/var/lib/postgresql/data
+    networks: [backend]
+networks:
+  ingress:
+  backend:
+    internal: true
+volumes:
+  database-data:
