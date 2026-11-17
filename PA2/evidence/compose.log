@@ -1,0 +1,332 @@
+db-1  | The files belonging to this database system will be owned by user "postgres".
+db-1  | This user must also own the server process.
+db-1  | 
+db-1  | The database cluster will be initialized with locale "en_US.utf8".
+db-1  | The default database encoding has accordingly been set to "UTF8".
+db-1  | The default text search configuration will be set to "english".
+db-1  | 
+db-1  | Data page checksums are disabled.
+db-1  | 
+db-1  | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+db-1  | creating subdirectories ... ok
+db-1  | selecting dynamic shared memory implementation ... posix
+db-1  | selecting default "max_connections" ... 100
+db-1  | selecting default "shared_buffers" ... 128MB
+db-1  | selecting default time zone ... Etc/UTC
+db-1  | creating configuration files ... ok
+db-1  | running bootstrap script ... ok
+db-1  | performing post-bootstrap initialization ... ok
+db-1  | syncing data to disk ... ok
+db-1  | 
+db-1  | 
+db-1  | Success. You can now start the database server using:
+db-1  | 
+db-1  |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+db-1  | 
+db-1  | initdb: warning: enabling "trust" authentication for local connections
+db-1  | initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+db-1  | waiting for server to start....2026-11-16 20:30:39.421 UTC [48] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg12+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit
+db-1  | 2026-11-16 20:30:39.422 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1  | 2026-11-16 20:30:39.424 UTC [51] LOG:  database system was shut down at 2026-11-16 20:30:39 UTC
+db-1  | 2026-11-16 20:30:39.426 UTC [48] LOG:  database system is ready to accept connections
+db-1  |  done
+db-1  | server started
+db-1  | CREATE DATABASE
+db-1  | 
+db-1  | 
+db-1  | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+db-1  | 
+db-1  | waiting for server to shut down....2026-11-16 20:30:39.580 UTC [48] LOG:  received fast shutdown request
+db-1  | 2026-11-16 20:30:39.581 UTC [48] LOG:  aborting any active transactions
+db-1  | 2026-11-16 20:30:39.582 UTC [48] LOG:  background worker "logical replication launcher" (PID 54) exited with exit code 1
+db-1  | 2026-11-16 20:30:39.582 UTC [49] LOG:  shutting down
+db-1  | 2026-11-16 20:30:39.582 UTC [49] LOG:  checkpoint starting: shutdown immediate
+db-1  | 2026-11-16 20:30:39.606 UTC [49] LOG:  checkpoint complete: wrote 921 buffers (5.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.011 s, sync=0.012 s, total=0.025 s; sync files=301, longest=0.004 s, average=0.001 s; distance=4238 kB, estimate=4238 kB; lsn=0/190A990, redo lsn=0/190A990
+db-1  | 2026-11-16 20:30:39.610 UTC [48] LOG:  database system is shut down
+db-1  |  done
+db-1  | server stopped
+db-1  | 
+db-1  | PostgreSQL init process complete; ready for start up.
+db-1  | 
+db-1  | 2026-11-16 20:30:39.693 UTC [1] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg12+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit
+db-1  | 2026-11-16 20:30:39.694 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db-1  | 2026-11-16 20:30:39.694 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db-1  | 2026-11-16 20:30:39.695 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1  | 2026-11-16 20:30:39.696 UTC [64] LOG:  database system was shut down at 2026-11-16 20:30:39 UTC
+db-1  | 2026-11-16 20:30:39.698 UTC [1] LOG:  database system is ready to accept connections
+db-1  | 2026-11-16 20:48:58.970 UTC [62] LOG:  checkpoint starting: time
+db-1  | 2026-11-16 20:49:09.611 UTC [62] LOG:  checkpoint complete: wrote 108 buffers (0.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=10.628 s, sync=0.009 s, total=10.642 s; sync files=56, longest=0.002 s, average=0.001 s; distance=552 kB, estimate=552 kB; lsn=0/1994D00, redo lsn=0/1994C70
+api-1  | INFO:     Started server process [1]
+api-1  | INFO:     Waiting for application startup.
+api-1  | INFO:     Application startup complete.
+api-1  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+api-1  | INFO:     127.0.0.1:52510 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:52526 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:45130 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:45142 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:47640 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56780 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56782 - "POST /api/v1/projects HTTP/1.1" 201 Created
+api-1  | INFO:     172.21.0.1:56782 - "GET /api/v1/projects/b84f7909-3cc2-4ea4-a9e6-4ea9d1fa6021 HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56782 - "PUT /api/v1/projects/b84f7909-3cc2-4ea4-a9e6-4ea9d1fa6021 HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56782 - "DELETE /api/v1/projects/b84f7909-3cc2-4ea4-a9e6-4ea9d1fa6021 HTTP/1.1" 204 No Content
+api-1  | INFO:     172.21.0.1:56782 - "GET /api/v1/projects/b84f7909-3cc2-4ea4-a9e6-4ea9d1fa6021 HTTP/1.1" 404 Not Found
+api-1  | INFO:     172.21.0.1:56782 - "DELETE /api/v1/projects/b84f7909-3cc2-4ea4-a9e6-4ea9d1fa6021 HTTP/1.1" 404 Not Found
+api-1  | INFO:     172.21.0.1:56786 - "POST /api/v1/projects HTTP/1.1" 201 Created
+api-1  | INFO:     172.21.0.1:56786 - "POST /api/v1/projects/6a6338f8-1814-4be1-8d0a-911c49dc1167/artifacts/repositories/ HTTP/1.1" 201 Created
+api-1  | INFO:     172.21.0.1:56786 - "GET /api/v1/projects/6a6338f8-1814-4be1-8d0a-911c49dc1167/artifacts/repositories/ HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56786 - "GET /api/v1/projects/6a6338f8-1814-4be1-8d0a-911c49dc1167/artifacts HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56786 - "GET /api/v1/projects/6a6338f8-1814-4be1-8d0a-911c49dc1167/artifacts/repositories/dc47ca94-00da-4d4b-8aac-237498b92a00 HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56786 - "PUT /api/v1/projects/6a6338f8-1814-4be1-8d0a-911c49dc1167/artifacts/repositories/dc47ca94-00da-4d4b-8aac-237498b92a00 HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56786 - "DELETE /api/v1/projects/6a6338f8-1814-4be1-8d0a-911c49dc1167/artifacts/repositories/dc47ca94-00da-4d4b-8aac-237498b92a00 HTTP/1.1" 204 No Content
+api-1  | INFO:     172.21.0.1:56786 - "GET /api/v1/projects/6a6338f8-1814-4be1-8d0a-911c49dc1167/artifacts/repositories/dc47ca94-00da-4d4b-8aac-237498b92a00 HTTP/1.1" 404 Not Found
+api-1  | INFO:     172.21.0.1:56786 - "DELETE /api/v1/projects/6a6338f8-1814-4be1-8d0a-911c49dc1167 HTTP/1.1" 204 No Content
+api-1  | INFO:     172.21.0.1:56792 - "POST /api/v1/projects HTTP/1.1" 201 Created
+api-1  | INFO:     172.21.0.1:56792 - "POST /api/v1/projects/80de1b8a-65a9-46a7-89b8-d10deb70079a/artifacts/videos/ HTTP/1.1" 201 Created
+api-1  | INFO:     172.21.0.1:56792 - "GET /api/v1/projects/80de1b8a-65a9-46a7-89b8-d10deb70079a/artifacts/videos/ HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56792 - "GET /api/v1/projects/80de1b8a-65a9-46a7-89b8-d10deb70079a/artifacts HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56792 - "GET /api/v1/projects/80de1b8a-65a9-46a7-89b8-d10deb70079a/artifacts/videos/c69d11ef-aa5a-4076-bf1a-c99ef843d77b HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56792 - "PUT /api/v1/projects/80de1b8a-65a9-46a7-89b8-d10deb70079a/artifacts/videos/c69d11ef-aa5a-4076-bf1a-c99ef843d77b HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56792 - "DELETE /api/v1/projects/80de1b8a-65a9-46a7-89b8-d10deb70079a/artifacts/videos/c69d11ef-aa5a-4076-bf1a-c99ef843d77b HTTP/1.1" 204 No Content
+api-1  | INFO:     172.21.0.1:56792 - "GET /api/v1/projects/80de1b8a-65a9-46a7-89b8-d10deb70079a/artifacts/videos/c69d11ef-aa5a-4076-bf1a-c99ef843d77b HTTP/1.1" 404 Not Found
+api-1  | INFO:     172.21.0.1:56792 - "DELETE /api/v1/projects/80de1b8a-65a9-46a7-89b8-d10deb70079a HTTP/1.1" 204 No Content
+api-1  | INFO:     172.21.0.1:56798 - "POST /api/v1/projects HTTP/1.1" 201 Created
+api-1  | INFO:     172.21.0.1:56798 - "POST /api/v1/projects/34ddc957-f138-4e47-99cc-d54acdf07af8/artifacts/manuscripts/ HTTP/1.1" 201 Created
+api-1  | INFO:     172.21.0.1:56798 - "GET /api/v1/projects/34ddc957-f138-4e47-99cc-d54acdf07af8/artifacts/manuscripts/ HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56798 - "GET /api/v1/projects/34ddc957-f138-4e47-99cc-d54acdf07af8/artifacts HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56798 - "GET /api/v1/projects/34ddc957-f138-4e47-99cc-d54acdf07af8/artifacts/manuscripts/ba415bc9-fff7-45df-9cfc-0faca0fa8114 HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56798 - "PUT /api/v1/projects/34ddc957-f138-4e47-99cc-d54acdf07af8/artifacts/manuscripts/ba415bc9-fff7-45df-9cfc-0faca0fa8114 HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56798 - "DELETE /api/v1/projects/34ddc957-f138-4e47-99cc-d54acdf07af8/artifacts/manuscripts/ba415bc9-fff7-45df-9cfc-0faca0fa8114 HTTP/1.1" 204 No Content
+api-1  | INFO:     172.21.0.1:56798 - "GET /api/v1/projects/34ddc957-f138-4e47-99cc-d54acdf07af8/artifacts/manuscripts/ba415bc9-fff7-45df-9cfc-0faca0fa8114 HTTP/1.1" 404 Not Found
+api-1  | INFO:     172.21.0.1:56798 - "DELETE /api/v1/projects/34ddc957-f138-4e47-99cc-d54acdf07af8 HTTP/1.1" 204 No Content
+api-1  | INFO:     172.21.0.1:56802 - "POST /api/v1/projects HTTP/1.1" 201 Created
+api-1  | INFO:     172.21.0.1:56802 - "POST /api/v1/projects/1a540456-207f-4b12-a9c7-813f6b0fc219/artifacts/manuscripts/ HTTP/1.1" 201 Created
+api-1  | INFO:     172.21.0.1:56802 - "POST /api/v1/projects/1a540456-207f-4b12-a9c7-813f6b0fc219/artifacts/manuscripts/03e43ff2-beb1-4010-bf87-063fd5f2e21f/file HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56802 - "GET /api/v1/projects/1a540456-207f-4b12-a9c7-813f6b0fc219/artifacts/manuscripts/03e43ff2-beb1-4010-bf87-063fd5f2e21f/file HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56802 - "POST /api/v1/projects/1a540456-207f-4b12-a9c7-813f6b0fc219/artifacts/manuscripts/ HTTP/1.1" 201 Created
+api-1  | INFO:     172.21.0.1:56802 - "POST /api/v1/projects/1a540456-207f-4b12-a9c7-813f6b0fc219/artifacts/manuscripts/f111b934-7a78-4f6d-a34d-1439b64cdaec/file HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56802 - "GET /api/v1/projects/1a540456-207f-4b12-a9c7-813f6b0fc219/artifacts/manuscripts/f111b934-7a78-4f6d-a34d-1439b64cdaec/file HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56802 - "GET /api/v1/projects/1a540456-207f-4b12-a9c7-813f6b0fc219/artifacts/manuscripts/download HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56802 - "DELETE /api/v1/projects/1a540456-207f-4b12-a9c7-813f6b0fc219/artifacts/manuscripts/03e43ff2-beb1-4010-bf87-063fd5f2e21f/file HTTP/1.1" 204 No Content
+api-1  | INFO:     172.21.0.1:56802 - "GET /api/v1/projects/1a540456-207f-4b12-a9c7-813f6b0fc219/artifacts/manuscripts/03e43ff2-beb1-4010-bf87-063fd5f2e21f/file HTTP/1.1" 404 Not Found
+api-1  | INFO:     172.21.0.1:56802 - "GET /api/v1/projects/1a540456-207f-4b12-a9c7-813f6b0fc219/artifacts/manuscripts/03e43ff2-beb1-4010-bf87-063fd5f2e21f HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56802 - "DELETE /api/v1/projects/1a540456-207f-4b12-a9c7-813f6b0fc219 HTTP/1.1" 204 No Content
+api-1  | INFO:     172.21.0.1:56818 - "POST /api/v1/projects HTTP/1.1" 201 Created
+api-1  | INFO:     172.21.0.1:56818 - "POST /api/v1/projects/0de5940b-5389-48ce-a2f4-8a5bf4fe4416/artifacts/repositories/ HTTP/1.1" 201 Created
+api-1  | INFO:     172.21.0.1:56818 - "GET /api/v1/projects?keyword=robotics HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56818 - "GET /api/v1/projects?lab_id=nonexistent HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56818 - "DELETE /api/v1/projects/0de5940b-5389-48ce-a2f4-8a5bf4fe4416 HTTP/1.1" 204 No Content
+api-1  | INFO:     172.21.0.1:56832 - "POST /api/v1/projects HTTP/1.1" 201 Created
+api-1  | INFO:     172.21.0.1:56832 - "POST /api/v1/projects/db7719c7-f25e-411a-8984-2cfef662bcf7/artifacts/repositories/ HTTP/1.1" 201 Created
+api-1  | INFO:     172.21.0.1:56832 - "GET /api/v1/projects?dept_id=dept-cs&lab_id=lab-robotics&course_id=CS763 HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56832 - "GET /api/v1/projects?lab_id=nonexistent HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56832 - "DELETE /api/v1/projects/db7719c7-f25e-411a-8984-2cfef662bcf7 HTTP/1.1" 204 No Content
+api-1  | INFO:     172.21.0.1:56834 - "POST /api/v1/projects HTTP/1.1" 201 Created
+api-1  | INFO:     172.21.0.1:56834 - "POST /api/v1/projects/a70dfce5-392f-4b0b-a121-f085273e910d/artifacts/repositories/ HTTP/1.1" 201 Created
+api-1  | INFO:     172.21.0.1:56834 - "GET /api/v1/projects?created_after=2020-01-01&created_before=2100-01-01 HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56834 - "GET /api/v1/projects?lab_id=nonexistent HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56834 - "DELETE /api/v1/projects/a70dfce5-392f-4b0b-a121-f085273e910d HTTP/1.1" 204 No Content
+api-1  | INFO:     172.21.0.1:56838 - "POST /api/v1/projects HTTP/1.1" 201 Created
+api-1  | INFO:     172.21.0.1:56838 - "POST /api/v1/projects/a33a4a5a-8702-4f87-bdbe-39b25781713c/artifacts/repositories/ HTTP/1.1" 201 Created
+api-1  | INFO:     172.21.0.1:56838 - "GET /api/v1/projects?keyword=research&artifact_type=repositories&course_id=CS763 HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56838 - "GET /api/v1/projects?lab_id=nonexistent HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56838 - "DELETE /api/v1/projects/a33a4a5a-8702-4f87-bdbe-39b25781713c HTTP/1.1" 204 No Content
+api-1  | INFO:     172.21.0.1:56842 - "POST /api/v1/projects HTTP/1.1" 201 Created
+api-1  | INFO:     172.21.0.1:56842 - "POST /api/v1/projects/63e8b4ce-c473-4d06-86e9-34be3d77cf76/artifacts/videos/ HTTP/1.1" 201 Created
+api-1  | INFO:     172.21.0.1:56842 - "DELETE /api/v1/projects/63e8b4ce-c473-4d06-86e9-34be3d77cf76 HTTP/1.1" 204 No Content
+api-1  | INFO:     172.21.0.1:56842 - "GET /api/v1/projects/63e8b4ce-c473-4d06-86e9-34be3d77cf76/artifacts/videos/04230d13-6ac7-4984-9354-aadff710c8ce HTTP/1.1" 404 Not Found
+api-1  | INFO:     172.21.0.1:56842 - "DELETE /api/v1/projects/63e8b4ce-c473-4d06-86e9-34be3d77cf76 HTTP/1.1" 404 Not Found
+api-1  | INFO:     127.0.0.1:47648 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:46442 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:46456 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:42904 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:42906 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:36192 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:36196 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56320 - "POST /api/v1/projects HTTP/1.1" 201 Created
+api-1  | INFO:     172.21.0.1:56328 - "GET /api/v1/projects/32a29e0b-06d0-4e61-873a-9ecf534a31b0 HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56328 - "PUT /api/v1/projects/32a29e0b-06d0-4e61-873a-9ecf534a31b0 HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56320 - "GET /api/v1/projects/32a29e0b-06d0-4e61-873a-9ecf534a31b0 HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56320 - "POST /api/v1/projects/32a29e0b-06d0-4e61-873a-9ecf534a31b0/artifacts/manuscripts/ HTTP/1.1" 201 Created
+api-1  | INFO:     172.21.0.1:56320 - "POST /api/v1/projects/32a29e0b-06d0-4e61-873a-9ecf534a31b0/artifacts/manuscripts/81ba9448-1366-40f5-83cc-dc0faf877131/file HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56320 - "GET /api/v1/projects/32a29e0b-06d0-4e61-873a-9ecf534a31b0 HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56350 - "PUT /api/v1/projects/32a29e0b-06d0-4e61-873a-9ecf534a31b0 HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56390 - "PUT /api/v1/projects/32a29e0b-06d0-4e61-873a-9ecf534a31b0 HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56346 - "PUT /api/v1/projects/32a29e0b-06d0-4e61-873a-9ecf534a31b0 HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56376 - "PUT /api/v1/projects/32a29e0b-06d0-4e61-873a-9ecf534a31b0 HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56412 - "PUT /api/v1/projects/32a29e0b-06d0-4e61-873a-9ecf534a31b0 HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56348 - "PUT /api/v1/projects/32a29e0b-06d0-4e61-873a-9ecf534a31b0 HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56344 - "PUT /api/v1/projects/32a29e0b-06d0-4e61-873a-9ecf534a31b0 HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56418 - "PUT /api/v1/projects/32a29e0b-06d0-4e61-873a-9ecf534a31b0 HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56360 - "PUT /api/v1/projects/32a29e0b-06d0-4e61-873a-9ecf534a31b0 HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56438 - "PUT /api/v1/projects/32a29e0b-06d0-4e61-873a-9ecf534a31b0 HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56398 - "PUT /api/v1/projects/32a29e0b-06d0-4e61-873a-9ecf534a31b0 HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56428 - "PUT /api/v1/projects/32a29e0b-06d0-4e61-873a-9ecf534a31b0 HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56320 - "GET /api/v1/projects/32a29e0b-06d0-4e61-873a-9ecf534a31b0 HTTP/1.1" 200 OK
+api-1  | INFO:     172.21.0.1:56320 - "DELETE /api/v1/projects/32a29e0b-06d0-4e61-873a-9ecf534a31b0 HTTP/1.1" 204 No Content
+api-1  | INFO:     127.0.0.1:59898 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:44902 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:44904 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:38916 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:38920 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:36080 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:36084 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:40808 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:40818 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:36722 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:36738 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:35748 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:35750 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:43762 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:43772 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:59076 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:59086 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:52414 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:52430 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:38356 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:38362 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:52020 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:52024 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:36176 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:36192 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:42712 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:42714 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:51612 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:51620 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:33084 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:33100 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:34382 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:35590 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:35594 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:33204 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:33210 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:48196 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:48202 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:59418 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:59420 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:52860 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:52876 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:47730 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:47734 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:44682 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:44686 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:38358 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:38372 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:60808 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:60810 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:42590 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:42606 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:53192 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:53194 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:56140 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:56144 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:39890 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:39906 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:45078 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:45092 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:34274 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:34286 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:57610 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:57620 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:54832 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:48326 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:48332 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:58704 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:58714 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:55562 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:55578 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:54776 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:54788 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:49630 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:49644 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:59850 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:59866 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:42206 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:42220 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:48388 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:48402 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:43786 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:43802 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:42248 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:42262 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:52904 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:52914 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:40234 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:40238 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:35702 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:35712 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:56740 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:56754 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:46566 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:46568 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:34940 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:54430 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:54440 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:39040 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:39050 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:55078 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:55082 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:60390 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:60404 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:35716 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:35724 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:45652 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:45658 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:51610 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:51616 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:35000 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:35006 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:36296 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:36304 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:41656 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:41666 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:56342 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:56352 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:58516 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:58524 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:49574 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:49578 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:44066 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:44082 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:52438 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:52440 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:33564 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:35924 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:35938 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:43936 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:43938 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:48730 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:48742 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:53410 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:53426 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:45292 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:45300 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:40072 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:40084 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:57694 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:57696 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:57948 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:57950 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:40266 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:40270 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:55884 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:55898 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:48456 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:48466 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:37330 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:37340 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:42358 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:42368 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:54416 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:54424 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:41614 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:41616 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:51896 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:36512 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:36518 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:47774 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:47786 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:52596 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:52600 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:53034 - "GET /healthz HTTP/1.1" 200 OK
+api-1  | INFO:     127.0.0.1:53050 - "GET /healthz HTTP/1.1" 200 OK

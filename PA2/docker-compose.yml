@@ -1,0 +1,46 @@
+# Stack: Docker Compose / PostgreSQL 17; AI contribution: 82%; human contribution: 18%.
+name: cs763-pa2
+services:
+  api:
+    build: ./functional-codebase
+    image: cs763-artifact-indexer:pa2
+    ports: ["127.0.0.1:${PA2_PORT:-8002}:8000"]
+    environment:
+      DATABASE_URL: postgresql+psycopg://indexer:local-course-only@db:5432/pa2
+      STORAGE_DIR: /data/manuscripts
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes: ["manuscripts:/data/manuscripts"]
+    networks: [ingress, backend]
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://localhost:8000/healthz')",
+        ]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  db:
+    image: postgres:17-bookworm@sha256:839fbb5a4942a7758dd93e18b42ea5649807491a0545b5eeeb8f0b8bb11857a5
+    environment:
+      POSTGRES_DB: pa2
+      POSTGRES_USER: indexer
+      POSTGRES_PASSWORD: local-course-only
+    volumes: ["database:/var/lib/postgresql/data"]
+    networks: [backend]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U indexer -d pa2"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+networks:
+  ingress:
+  backend:
+    internal: true
+volumes:
+  database:
+  manuscripts:

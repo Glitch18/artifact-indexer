@@ -1,0 +1,91 @@
+{
+  "target": "http://127.0.0.1:8002",
+  "started_utc": "2026-11-16T20:31:48Z",
+  "checks": [
+    {
+      "id": "V1",
+      "cwe": "CWE-306",
+      "authorization_header_sent": false,
+      "read_status": 200,
+      "update_status": 200,
+      "stored_title": "Changed without credentials",
+      "members": [
+        {
+          "id": "alice",
+          "role": "student"
+        }
+      ],
+      "confirmed": true
+    },
+    {
+      "id": "V2",
+      "cwe": "CWE-400",
+      "bytes_sent": 4194304,
+      "status": 200,
+      "stored_size": 4194304,
+      "hash_matches": true,
+      "scope": "Bounded 4 MiB acceptance test plus source review; no exhaustion or maximum capacity measured",
+      "confirmed": true
+    },
+    {
+      "id": "V3",
+      "cwe": "CWE-362",
+      "before_revision": 2,
+      "successful_updates": 12,
+      "expected_revision": 14,
+      "actual_revision": 5,
+      "responses": [
+        {
+          "status": 200,
+          "revision": 5
+        },
+        {
+          "status": 200,
+          "revision": 4
+        },
+        {
+          "status": 200,
+          "revision": 4
+        },
+        {
+          "status": 200,
+          "revision": 5
+        },
+        {
+          "status": 200,
+          "revision": 5
+        },
+        {
+          "status": 200,
+          "revision": 4
+        },
+        {
+          "status": 200,
+          "revision": 5
+        },
+        {
+          "status": 200,
+          "revision": 3
+        },
+        {
+          "status": 200,
+          "revision": 5
+        },
+        {
+          "status": 200,
+          "revision": 5
+        },
+        {
+          "status": 200,
+          "revision": 4
+        },
+        {
+          "status": 200,
+          "revision": 5
+        }
+      ],
+      "confirmed": true
+    }
+  ],
+  "fixture_cleanup_status": 204
+}

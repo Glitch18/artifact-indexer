@@ -1,0 +1,12 @@
+{
+  "functional-codebase/.dockerignore": "d5cf146d5b2ff62a2c2d89f99ae6f916585af86131d4b02b275eb016d3bfbb57",
+  "functional-codebase/Dockerfile": "854d45fbeb828456920cba805fa035d904aca578bc236d8a106a7f5ac6e8adcd",
+  "functional-codebase/README.md": "156e75489bf3480accdb3acc8e2881d194af91b7484e94f6a150d0cfde68736b",
+  "functional-codebase/app/__init__.py": "f9668c2ca800c72556f20eca602759ba1cabf5506e27c51ef5585a677063a13e",
+  "functional-codebase/app/main.py": "4bf7e58c243b1796da875bcfbe83bf678c32084b489f1da8494d9938e7df4f21",
+  "functional-codebase/fixtures/reference-data.json": "e0b234d13ed0994e98a27539055e611ddfa3b0daf25c80db431d9260a626e0a5",
+  "functional-codebase/pyproject.toml": "210e5163ec1e56158c7ed61c6c951691fb9e31db803a0a4505557da8b3670312",
+  "functional-codebase/requirements.txt": "b30ff90803a5eb51e458a68c39346673664636653f1cb7fca0fcadaefdd5f5d4",
+  "functional-codebase/tests/test_api.py": "f1f6f3e8d9fd9d499b29cf660d4ab59ff17b0437fdf5513444ca08773e30f3cc",
+  "functional-codebase/uv.lock": "6d845d895474ae9736f8a16635a2e97616c3f326d1cbfc968b0ee8203ceb0ef0"
+}

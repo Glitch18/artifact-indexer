@@ -1,0 +1,76 @@
+[
+    {
+        "Id": "sha256:a6ae2bbf8472d17c319dd2353234b6af6c91bab031aeae299f983ddb4e2fd6b4",
+        "RepoTags": [
+            "cs763-artifact-indexer:pa2"
+        ],
+        "RepoDigests": [
+            "cs763-artifact-indexer@sha256:a6ae2bbf8472d17c319dd2353234b6af6c91bab031aeae299f983ddb4e2fd6b4"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-16T20:29:42.253373837Z",
+        "Config": {
+            "User": "app",
+            "ExposedPorts": {
+                "8000/tcp": {}
+            },
+            "Env": [
+                "PATH=/opt/venv/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+                "PYTHON_VERSION=3.13.18",
+                "PYTHON_SHA256=abb0102e6d4ae027509bcb82327d9dd85515b44a3ba8ad538cfc5e9847029f68",
+                "PYTHONUNBUFFERED=1",
+                "PYTHONDONTWRITEBYTECODE=1",
+                "STORAGE_DIR=/data/manuscripts"
+            ],
+            "Cmd": [
+                "uvicorn",
+                "app.main:app",
+                "--host",
+                "0.0.0.0",
+                "--port",
+                "8000"
+            ],
+            "WorkingDir": "/app",
+            "Labels": {
+                "com.docker.compose.project": "cs763-pa2",
+                "com.docker.compose.service": "api",
+                "com.docker.compose.version": "5.6.0"
+            },
+            "ArgsEscaped": true
+        },
+        "Architecture": "arm64",
+        "Os": "linux",
+        "Size": 306251547,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:8197d9c14b22d4cd79198c0722a18035760a85613211f2127ee6f5888735ca98",
+                "sha256:0c7c78e8dbf5da0d7979657aa571985545119e870b6766304b8870f6729e5a04",
+                "sha256:4387372e84f4aa515debe8b2d24120c784317f6738b7c75dba920f0fe13066a4",
+                "sha256:70d41abcc316d46fc0bb1e96b991deda5744bb9bd9189de9184691b88dfc347b",
+                "sha256:e5f8a76186479a20b31cbc7cf5c17cbba8686f2bb925fd710eb2b781fd864843",
+                "sha256:846cd4346b0513e9810366df3eceebc449039550aae88b836ea0f2ca56ce3ddd",
+                "sha256:477b8f7d20f0fd3bfb1340e576330164668a368350d8e2939c98810b45c4293d",
+                "sha256:3fdeadac45e7c27fef3a15b0b92ab0c89591ffdcd14e116f41e09ad643294dff"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-16T20:29:43.581365046Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:a6ae2bbf8472d17c319dd2353234b6af6c91bab031aeae299f983ddb4e2fd6b4",
+            "size": 856
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "fliaxbltg3wr5kip9xc478sio",
+                    "CreatedAt": "2026-11-16T20:29:43.894281796Z"
+                }
+            ]
+        }
+    }
+]

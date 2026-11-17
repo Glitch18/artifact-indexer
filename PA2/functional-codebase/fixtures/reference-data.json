@@ -1,0 +1,5 @@
+{
+  "members": [{"id": "alice", "role": "student"}, {"id": "prof-one", "role": "faculty"}],
+  "units": [{"type": "lab", "id": "lab-robotics"}, {"type": "department", "id": "dept-cs"}, {"type": "course", "id": "CS763"}],
+  "note": "Fictional local references only; no external service lookup."
+}

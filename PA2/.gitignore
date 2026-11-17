@@ -1,0 +1,15 @@
+# AI contribution: 100%; human review pending.
+**/.venv/
+**/__pycache__/
+**/.pytest_cache/
+**/.ruff_cache/
+**/*.db
+**/data/
+**/keys/
+**/*tokens*.json
+.env
+.env.*
+!.env.example
+.sonar/
+.scannerwork/
+evidence/*.tar
